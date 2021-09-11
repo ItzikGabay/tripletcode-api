@@ -1,0 +1,7 @@
+
+# VSCODE Folders
+.history
+.vscode
+
+# Basic Ignore
+/node_modules/
