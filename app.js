@@ -15,12 +15,6 @@ const mongooseMiddleware = require('./middleware/database/mongoose/index');
 mongooseMiddleware.establish_db_connection();
 mongooseMiddleware.connectionListening()
 
-/**
- * Router configuration
- */
-const router = require("./routes/index.js");
-app.use("/", router);
-
 
 /**
  * Middleware configuration
@@ -30,6 +24,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+/**
+ * Router configuration
+ */
+const router = require("./routes/index.js");
+app.use("/", router);
 
 app.listen(3000 || process.env.PORT, () => {
     logger("🚀 Server started! 🚀")

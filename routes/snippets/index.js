@@ -5,10 +5,9 @@
 
 const express = require('express');
 const router = express.Router({ mergeParams: true });
+const snippetsController = require('../../controllers/snippets.controller')
 
-router.get('/', (req, res) => {
-    const snippet_id = req.params.snippet_id;
-    res.send(`${snippet_id}`)
-})
+router
+    .get('/', snippetsController.retrieveSnippet)
 
 module.exports = router;

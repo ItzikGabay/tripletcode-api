@@ -11,7 +11,9 @@ const snippetsRoute = require('./snippets/index')
 const snippetsController = require('../controllers/snippets.controller')
 
 // main - index
-router.get('/', snippetsController.latestPublicSnippets);
+router
+    .get('/', snippetsController.latestPublicSnippets)
+    .post('/', snippetsController.addSnippet)
 
 // ROUTES CONFIGURATION
 // ----------------------------
