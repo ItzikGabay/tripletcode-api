@@ -9,5 +9,6 @@ const snippetsController = require('../../controllers/snippets.controller')
 
 router
     .get('/', snippetsController.retrieveSnippet)
+    .post('/', snippetsController.retrieveSnippet)
 
 module.exports = router;

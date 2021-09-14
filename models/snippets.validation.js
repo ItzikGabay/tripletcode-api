@@ -1,10 +1,10 @@
 const Joi = require('joi');
 
 const snippetsValidation = Joi.object({
-    snippet_data: Joi.object({
-        title: Joi.string().required(),
-        owner_id: Joi.string().required(),
-    }).required(),
+    snippet_info: Joi.object({
+        title: Joi.string(),
+        owner_id: Joi.string(),
+    }),
     snippet_settings: Joi.object({
         public_view: Joi.boolean().required(),
     }).required(),

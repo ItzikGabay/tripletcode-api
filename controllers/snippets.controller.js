@@ -5,6 +5,7 @@
 
 const snippets_model = require('../models/snippets.model')
 const snippets_validation = require('../models/snippets.validation')
+const { logger } = require('bs-logger');
 
 
 /**
@@ -14,6 +15,7 @@ const snippets_validation = require('../models/snippets.validation')
  */
 exports.latestPublicSnippets = async (req, res) => {
     const result = await snippets_model.getLatestPublicSnippets()
+    logger(`DB $GET(latestPublicSnippets) Request`)
     res.status(200).json(result)
 }
 
@@ -28,6 +30,7 @@ exports.addSnippet = async (req, res) => {
     try {
         let value = await snippets_validation.validateAsync(req.body)
         const result = await snippets_model.createSnippet(req.body)
+        logger(`DB $GET(addSnippet) Request ${req.body}`)
         res.status(200).json(result)
     } catch (e) {
         res.status(401).json({msg: 'Error occurred. please make sure you fill all the details.', info: e.details[0].message})
@@ -40,9 +43,13 @@ exports.addSnippet = async (req, res) => {
  * @return {Object} data of snippet from the user.
  */
 exports.retrieveSnippet = async (req, res) => {
-    let params_id = req.params.snippet_id;
-    let result = await snippets_model.getSnippetById(params_id);
-    res.status(200).json(result);
+    try {
+        let params_id = req.params.snippet_id;
+        let result = await snippets_model.getSnippetById(params_id);
+        res.status(200).json(result);
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 
