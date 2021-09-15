@@ -9,8 +9,12 @@ exports.establish_db_connection = (() => {
         // Disabled because of an error:
         // useCreateIndex: true,
         // useFindAndModify: false
-    })
-})
+    });
+});
+
+// for heroku
+
+
 
 exports.connectionListening = (() => {
     const db = mongoose.connection;
