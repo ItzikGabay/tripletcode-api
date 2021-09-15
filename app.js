@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 const router = require("./routes/index.js");
 app.use("/", router);
 
-app.listen(4001 || process.env.PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
     logger("🚀 Server started! 🚀")
     logger("\033[35mView at: https://localhost:4001\033[0m")
 })
