@@ -11,11 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bs-logger": "^0.2.6",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "joi": "^17.4.2",
-    "mongoose": "^6.0.5",
-    "uuid": "^8.3.2"
+    "bs-logger": "0.2.6",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "joi": "17.4.2",
+    "mongoose": "6.0.5",
+    "uuid": "8.3.2"
   }
 }

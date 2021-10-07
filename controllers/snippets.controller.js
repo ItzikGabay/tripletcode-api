@@ -7,7 +7,6 @@ const snippets_model = require('../models/snippets.model')
 const snippets_validation = require('../models/snippets.validation')
 const { logger } = require('bs-logger');
 
-
 /**
  * @title latestPublicSnippets()
  * @desc Retrieve the data of public shared snippets between users.
@@ -15,6 +14,7 @@ const { logger } = require('bs-logger');
  */
 exports.latestPublicSnippets = async (req, res) => {
     const result = await snippets_model.getLatestPublicSnippets()
+    console.log('hello')
     logger(`DB $GET(latestPublicSnippets) Request`)
     res.status(200).json(result)
 }
@@ -28,12 +28,12 @@ exports.addSnippet = async (req, res) => {
     // Trying to catch if we have any 
     // errors while validating the data
     try {
-        let value = await snippets_validation.validateAsync(req.body)
-        const result = await snippets_model.createSnippet(req.body)
-        logger(`DB $GET(addSnippet) Request ${req.body}`)
-        res.status(200).json(result)
+        let value = await snippets_validation.validateAsync(req.body);
+        const result = await snippets_model.createSnippet(req.body);
+        logger(`DB $GET(addSnippet) Request ${req.body}`);
+        res.status(200).json(result);
     } catch (e) {
-        res.status(401).json({msg: 'Error occurred. please make sure you fill all the details.', info: e.details[0].message})
+        res.status(401).json({ msg: 'Error occurred. please make sure you fill all the details.', info: e.details[0].message });
     }
 }
 
