@@ -3,5 +3,7 @@
 .history
 .vscode
 
-# Basic Ignore
+
+# Project Ignore
 /node_modules/
+.env

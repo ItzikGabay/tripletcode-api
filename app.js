@@ -6,6 +6,7 @@
 const express = require('express');
 const app = express();
 const { logger } = require('bs-logger');
+require('dotenv').config();
 
 /**
  * Database configuration
@@ -29,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
  */
 const router = require("./routes/index.js");
 app.use("/", router);
+
 
 app.listen(process.env.PORT || 5000, () => {
     logger("🚀 Server started! 🚀")

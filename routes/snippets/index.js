@@ -1,14 +1,14 @@
 /**
  * /routes/snippets/index.js
- * @desc Snippets routes File.
+ * @desc Snippet routes File.
  */
 
 const express = require('express');
 const router = express.Router({ mergeParams: true });
 const snippetsController = require('../../controllers/snippets.controller')
 
+// Single Snippet - /:id
 router
-    .get('/', snippetsController.retrieveSnippet)
-    .post('/', snippetsController.retrieveSnippet)
+    .get('/', snippetsController.retrieveSnippetById)
 
 module.exports = router;

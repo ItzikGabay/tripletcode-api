@@ -1,29 +1,36 @@
 const mongoose = require("mongoose");
 const { logger } = require('bs-logger');
 
+// prod \ dev mongodb connection
+let DB_URL = process.env.PROD_DB;
+if (!process.env.NODE_ENV === 'production') {
+    DB_URL = process.env.DEV_DB
+}
+
+/**
+*  @title establish_db_connection
+*  @desc establish new connection with Mongoose to MONGODB db.
+**/
 exports.establish_db_connection = (() => {
-    mongoose.connect('mongodb://localhost:27017/tripletcode', {
-    // mongoose.connect('mongodb+srv://admin:admin2@main.gewhd.mongodb.net/tripletCode?retryWrites=true&w=majority', {
+    mongoose.connect(DB_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
-        // Disabled because of an error:
+        // TODO: check about mongoose settings
         // useCreateIndex: true,
         // useFindAndModify: false
     });
 });
 
-// for heroku
-
-
-
+/**
+*  @title connectionListening
+*  @desc listening once the connection listener created & error received
+**/
 exports.connectionListening = (() => {
-    const db = mongoose.connection;
-    db.once('error', () => {
-        logger.warn("Error trying to connect to mongoose!")
-    })
-    db.once('open', () => {
+    mongoose.connection.once('open', () => {
         logger("🚀 Mongoose connection established! 🚀")
     })
-    // db.on('error', console.error.bind(console, 'connection error'))
+    mongoose.connection.once('error', () => {
+        logger.warn("Error trying to connect to mongoose!")
+    })
 })
 

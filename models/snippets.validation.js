@@ -1,5 +1,11 @@
 const Joi = require('joi');
 
+/**
+*  @title snippetsValidation
+*  @desc Validate info by matching object to object.
+*  @see https://www.npmjs.com/package/joi
+**/
+
 const snippetsValidation = Joi.object({
     snippet_info: Joi.object({
         title: Joi.string(),

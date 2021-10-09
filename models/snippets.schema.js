@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const { v4: uuidv4 } = require('uuid');
 
+/**
+*  @title snippetsSchema
+*  @desc snippet schema when saved to DB.
+**/
 const snippetsSchema = new Schema({
     snippet_data: String,
     snippet_info: {
