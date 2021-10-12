@@ -2,7 +2,7 @@
   <br>
   <a href="https://yelp-camp-live.herokuapp.com"><img src="https://github.com/ItzikGabay/ItzikGabay/blob/main/Triplet%20(1).png?raw=true" alt="logo" width="200"></a>
   <br>
-  🙋‍♂️ Triplet Code
+  🙋‍♂️ Triplet Code (API repo)
   <br>
 </h1>
 
