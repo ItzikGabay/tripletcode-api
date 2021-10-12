@@ -8,7 +8,7 @@ const Joi = require('joi');
 
 const snippetsValidation = Joi.object({
     snippet_info: Joi.object({
-        title: Joi.string(),
+        title: Joi.optional().allow(null).allow('').empty(''),
         owner_id: Joi.string(),
     }),
     snippet_settings: Joi.object({

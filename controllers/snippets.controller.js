@@ -53,6 +53,7 @@ exports.saveNewSnippet = async (req, res) => {
     // Trying to catch if we have any 
     // errors while validating the data
     try {
+        debugger;
         let value = await snippets_validation.validateAsync(req.body);
         const result = await snippets_model.createSnippet(req.body);
         logger(`DB $GET(addSnippet) Request ${req.body}`);
