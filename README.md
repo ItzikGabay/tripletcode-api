@@ -1,8 +1,8 @@
 <h1 align="center">
   <br>
-  <a href="https://yelp-camp-live.herokuapp.com"><img src="https://github.com/ItzikGabay/ItzikGabay/blob/main/Triplet%20(1).png?raw=true" alt="logo" width="200"></a>
+  <a href="https://tripletview.herokuapp.com/"><img src="https://github.com/ItzikGabay/ItzikGabay/blob/main/Triplet%20(1).png?raw=true" alt="logo" width="200"></a>
   <br>
-  🙋‍♂️ Triplet Code (API repo)
+  🙋‍♂️ Triplet Code (Frontend repo)
   <br>
 </h1>
 
@@ -10,9 +10,10 @@
 
 <h4 align="center">Share code snippet & live editing with friends and team-members for free! </h4>
 <p align="center">Let you add, share and view snippets and share live sessions.</p>
-<h4 align="center">built on top of <a href="https://yelp-camp-live.herokuapp.com" target="_blank">Vue & Vuex, Node.js, MongoDB</a> by <a href="https://yelp-camp-live.herokuapp.com" target="_blank">@ItzikDevio</a></h4>
+<h4 align="center">built on top of <a href="https://tripletview.herokuapp.com/" target="_blank">Vue & Vuex, Node.js, MongoDB</a> by <a href="https://yelp-camp-live.herokuapp.com" target="_blank">@ItzikDevio</a></h4>
 
-<p align="center"><b>Demo Link: </b><a href="https://yelp-camp-live.herokuapp.com">https://yelp-camp-live.herokuapp.com</a></p>
+<p align="center"><b>Demo Link (Frontend): </b><a href="https://tripletview.herokuapp.com/">https://tripletview.herokuapp.com/</a> (takes 30 seconds to load up)</p>
+<p align="center"><b>Demo Link (Backend): </b><a href="https://triplet-code.herokuapp.com/">https://triplet-code.herokuapp.com/</a> (takes 30 seconds to load up)</p>
 
 <p align="center">
   <a href="#">
