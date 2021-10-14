@@ -14,7 +14,7 @@ require('dotenv').config();
 const mongoose = require("mongoose");
 const mongooseMiddleware = require('./middleware/database/mongoose/index');
 mongooseMiddleware.establish_db_connection();
-mongooseMiddleware.connectionListening()
+mongooseMiddleware.connectionListening();
 
 
 /**
@@ -34,5 +34,5 @@ app.use("/", router);
 
 app.listen(process.env.PORT || 5000, () => {
     logger("🚀 Server started! 🚀")
-    logger("\033[35mView at: https://localhost:4001\033[0m")
+    logger("\033[35mHappy Coding!\033[0m")
 })

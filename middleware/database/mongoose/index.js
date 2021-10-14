@@ -27,7 +27,7 @@ exports.establish_db_connection = (() => {
 **/
 exports.connectionListening = (() => {
     mongoose.connection.once('open', () => {
-        logger("🚀 Mongoose connection established! 🚀")
+        logger("\033[92m🚀 Mongoose connection established! 🚀 \033[92m")
     })
     mongoose.connection.once('error', () => {
         logger.warn("Error trying to connect to mongoose!")

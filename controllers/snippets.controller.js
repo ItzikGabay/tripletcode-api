@@ -84,7 +84,8 @@ exports.retrieveSnippetById = async (req, res) => {
  */
 exports.startLiveSession = async (req, res) => {
     try {
-        pusher.trigger("my-channel", "my-event", {
+        console.log(req.body.query_id);
+        pusher.trigger(req.body.query_id, "my-event", {
             id: req.body.username,
             message: req.body.codeData
         });
