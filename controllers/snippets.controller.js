@@ -84,12 +84,11 @@ exports.retrieveSnippetById = async (req, res) => {
  */
 exports.startLiveSession = async (req, res) => {
     try {
-        console.log(req.body.query_id);
         pusher.trigger(req.body.query_id, "my-event", {
             id: req.body.username,
             message: req.body.codeData
         });
-        res.status(200).json('Session started sucessfuly!');
+        res.status(200).json(`Session started sucessfuly at ${req.body.query_id}`);
     } catch (e) {
         console.log(e);
     }
